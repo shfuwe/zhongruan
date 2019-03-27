@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+  <head>
+    <title>人流量云监管平台</title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+        });
+      });
+    </script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/china.js"></script>
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.useso.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="Nova"></a> </div>
+        <div class="menu"> <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
+          <ul class="nav" id="nav">
+            <li class="current"><a href="index.html">首页</a></li>
+            <li><a href="about.html">历史查询</a></li>
+            <li><a href="services.html">数据分析</a></li>
+            <li><a href="blog.html">...</a></li>
+            <li><a href="contact.html">...</a></li>
+            <div class="clear"></div>
+          </ul>
+          <script type="text/javascript" src="js/responsive-nav.js"></script>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+    <div class="banner text-center">
+      <div class="container">
+        <div class="banner-info">
+          <h1>Lorem ipsum dolor sit amet</h1>
+          <p>nteger nec odio praesent libero. Sed cursus ante dapibus diamsed nisi.<br>
+            Nulla quis sem at nibh elementum imperdiet</p>
+          <label class="page-scroll"><a class="banner-btn class scroll" href="#feature"><i class="fa fa-angle-double-down fa-4x"></i></a></label>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+    <div class="content_white">
+      <h2>Welcome to our website!</h2>
+      <p>Quisque cursus metus vitae pharetra auctor, sem massa mattis semat interdum magna.</p>
+    </div>
+    <div id="k" style="width: 100%;height: 600%;"></div>
+    <script>
+      function randomData() {
+        return Math.round(Math.random()*500);
+      }
+        var mydata = [
+          {name: '北京',value: randomData() },{name: '天津',value: randomData() },
+          {name: '上海',value: randomData() },{name: '重庆',value: randomData() },
+          {name: '河北',value: randomData() },{name: '河南',value: randomData() },
+          {name: '云南',value: randomData() },{name: '辽宁',value: randomData() },
+          {name: '黑龙江',value: randomData() },{name: '湖南',value: randomData() },
+          {name: '安徽',value: randomData() },{name: '山东',value: randomData() },
+          {name: '新疆',value: randomData() },{name: '江苏',value: randomData() },
+          {name: '浙江',value: randomData() },{name: '江西',value: randomData() },
+          {name: '湖北',value: randomData() },{name: '广西',value: randomData() },
+          {name: '甘肃',value: randomData() },{name: '山西',value: randomData() },
+          {name: '内蒙古',value: randomData() },{name: '陕西',value: randomData() },
+          {name: '吉林',value: randomData() },{name: '福建',value: randomData() },
+          {name: '贵州',value: randomData() },{name: '广东',value: randomData() },
+          {name: '青海',value: randomData() },{name: '西藏',value: randomData() },
+          {name: '四川',value: randomData() },{name: '宁夏',value: randomData() },
+          {name: '海南',value: randomData() },{name: '台湾',value: randomData() },
+          {name: '香港',value: randomData() },{name: '澳门',value: randomData() }
+        ];
+
+        var option = {
+          backgroundColor: '#FFFFFF',
+          title: {
+            text: '全国地图',
+            subtext: '纯属虚构',
+            x:'center'
+          },
+          tooltip : {
+            trigger: 'item'
+          },
+          visualMap: {
+            show : false,
+            x: 'left',
+            y: 'bottom',
+            splitList: [
+              {start: 500, end:600},{start: 400, end: 500},
+              {start: 300, end: 400},{start: 200, end: 300},
+              {start: 100, end: 200},{start: 0, end: 100},
+            ],
+            color: ['#66CC33', '#00FF00', '#66FF33','#339900', '#33CC00', '#00CC00']
+          },
+          series: [{
+            name: '随机数据',
+            type: 'map',
+            mapType: 'china',
+            roam: true,
+            label: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+            data:mydata
+          }]
+        };
+        var chart = echarts.init(document.getElementById('k'));
+        chart.setOption(option);
+
+    </script>
+    <div class="featured_content" id="feature">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 feature_grid1"> <i class="fa fa-cloud-download fa-3x"></i>
+            <h3 class="m_1"><a href="#">Legimus graecis</a></h3>
+            <p class="m_2">Lorem ipsum dolor sit amet, facilisis egestas sodales non luctus, sem quas potenti malesuada vel phasellus.</p>
+            <a href="#" class="feature_btn">More</a> </div>
+          <div class="col-md-3 feature_grid1"> <i class="fa fa-shield fa-3x"></i>
+            <h3 class="m_1"><a href="#">Mazim minimum</a></h3>
+            <p class="m_2">Lorem ipsum dolor sit amet, facilisis egestas sodales non luctus, sem quas potenti malesuada vel phasellus.</p>
+            <a href="#" class="feature_btn">More</a> </div>
+          <div class="col-md-3 feature_grid1"> <i class="fa fa-flask fa-3x"></i>
+            <h3 class="m_1"><a href="#">Modus altera</a></h3>
+            <p class="m_2">Lorem ipsum dolor sit amet, facilisis egestas sodales non luctus, sem quas potenti malesuada vel phasellus.</p>
+            <a href="#" class="feature_btn">More</a> </div>
+          <div class="col-md-3 feature_grid2"> <i class="fa fa-bar-chart fa-3x"></i>
+            <h3 class="m_1"><a href="#">Melius eligendi</a></h3>
+            <p class="m_2">Lorem ipsum dolor sit amet, facilisis egestas sodales non luctus, sem quas potenti malesuada vel phasellus.</p>
+            <a href="#" class="feature_btn">More</a> </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+    <div class="container">
+      <div class="content_white">
+        <h2>Vel ad aliquid copiosae</h2>
+        <p>No cum agam appareat vituperata ateum iusto paulo dignissim</p>
+      </div>
+      <div class="testimonial">
+        <div class="row testimonial_top">
+          <div class="col-md-6">
+            <ul class="test_box">
+              <li class="test_img"><img src="images/pic1.jpg" class="img-responsive" alt=""/> </li>
+              <li class="test_desc">
+                <h4><a href="#">Impetus tincidunt</a></h4>
+                <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
+              </li>
+              <div class="clearfix"> </div>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="test_box">
+              <li class="test_img"><img src="images/pic2.jpg" class="img-responsive" alt=""/> </li>
+              <li class="test_desc">
+                <h4><a href="#">Paulo dignissim</a></h4>
+                <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
+              </li>
+              <div class="clearfix"> </div>
+            </ul>
+          </div>
+        </div>
+        <div class="row testimonial_bottom">
+          <div class="col-md-6">
+            <ul class="test_box">
+              <li class="test_img"><img src="images/pic3.jpg" class="img-responsive" alt=""/> </li>
+              <li class="test_desc">
+                <h4><a href="#">Vituperata ateum</a></h4>
+                <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
+              </li>
+              <div class="clearfix"> </div>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="test_box">
+              <li class="test_img"><img src="images/pic4.jpg" class="img-responsive" alt=""/> </li>
+              <li class="test_desc">
+                <h4><a href="#">Appareat vituperat</a></h4>
+                <p>Vel ad aliquid copiosae, cum id impetus tincidunt, solum option laoreet ei quo. No cum agam appareat vituperata ateum iusto paulo dignissim.</p>
+              </li>
+              <div class="clearfix"> </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer_midle">
+        <div class='container'>
+          <div class="row">
+            <div class="col-md-3">
+              <ul class="social_left">
+                <li class="facebook"><a href="#"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+                <li class="fb_text">
+                  <h4><a href="#">Follow us on Facebook</a></h4>
+                </li>
+                <div class="clearfix"> </div>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul class="social_left">
+                <li class="facebook"><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+                <li class="fb_text">
+                  <h4><a href="#">Follow us on Twitter</a></h4>
+                </li>
+                <div class="clearfix"> </div>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul class="social_left">
+                <li class="facebook"><a href="#"><i class="fa fa-google-plus-square fa-3x"></i></a></li>
+                <li class="fb_text">
+                  <h4><a href="#">Follow us on Google +</a></h4>
+                </li>
+                <div class="clearfix"> </div>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul class="social_left">
+                <li class="facebook"><a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+                <li class="fb_text">
+                  <h4><a href="#">Follow us on LinkedIn</a></h4>
+                </li>
+                <div class="clearfix"> </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="copy">
+          <p>Copyright &copy; 2014 Nova. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
